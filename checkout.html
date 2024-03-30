@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PJ茶園</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="custom.css">
+</head>
+<!-- <style>
+
+    body {
+                margin: 0;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                font-size: 1rem;
+                font-weight: normal;
+                line-height: 1.5;
+                color: #212529;
+                background-color: #fff;
+                }
+
+    /* .absolute {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        } */
+</style> -->
+
+<body>
+
+    <div class="container-fuild" >
+        <!-- style="margin-right: 13px; -->
+        <div class="row">
+            <div class="bg-secondary py-1 relative" style="height: 28px;">
+                <a href="#" class="text-white absolute-facebook">
+                    <i class="fa-brands fa-square-facebook"></i>
+                </a>
+                <a href="#" class="text-white absolute-twitter">
+                    <i class="fa-brands fa-square-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- navbar -->
+    <div class="container-fuild sticky-top">
+        <div class="row">
+            <nav class=" navbar navbar-expand-lg navbar-dark bg-dark  relative">
+                <!-- fixed-top 固定於上方 -->
+                <div class="container position-relative" style="height: 40px;">
+
+
+                    <button class="navbar-toggler mr-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand absolute-title" href="#">
+                        <img src="/images/logo_w.svg" width="120" height="24" alt="">
+                    </a>
+                    <!-- 登入&購物車 -->
+                    <div class="absolute-cart mr-5">
+                            <!-- <a href="#" class="mr-5" data-bs-toggle="modal" data-bs-target="#cartModal" style="color:transparent;margin-right: 15px;"> -->
+                            <div class="dropdown">
+                                <a href="#" class="mr-5 btn-cart" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-cart-shopping fa-xl " style="color: #ffffff;"></i>
+                                        <!-- 文件badge -->
+                                        <span class="badge rounded-pill bg-danger">12</span>    
+                                </a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal"  style="color:transparents">
+                                    <i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1" style="min-width: 300px;">
+                                    <form class="px-4 py-3">
+                                        <table class="table table-sm">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="align-middle text-center">
+                                                    <a href="#removeModal" class="text-muted" data-toggle="modal" data-title="刪除 金牌西裝 1 件">
+                                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                    </a>
+                                                    </td>
+                                                    <td class="align-middle">金牌西裝</td>
+                                                    <td class="align-middle">1 件</td>
+                                                    <td class="align-middle text-right">$520</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="align-middle text-center">
+                                                    <a href="#removeModal" class="text-muted" data-toggle="modal" data-title="刪除 金牌女裝 1 件">
+                                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                    </a>
+                                                    </td>
+                                                    <td class="align-middle">金牌女裝</td>
+                                                    <td class="align-middle">1 件</td>
+                                                    <td class="align-middle text-right">$480</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                          <a href="checkout.html" class="btn btn-primary" style="width:250px">
+                                            結帳去
+                                          </a>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- 文件搜尋modal -->
+                    </div>
+
+                    <div class="collapse navbar-collapse absolute-menu bg-dark" id="navbarNavDropdown">
+                        
+                            <ul class="navbar-nav  ml-2 menu-padding"> 
+                                <!-- mr-auto將登入推到最右方 -->
+                                <li class="nav-item active">
+                                <a class="nav-link" href="index.html">首頁<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        有機茶
+                                    </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+                                    <a class="dropdown-item" href="shopping.html">有機茶專賣</a>
+                                    <a class="dropdown-item" href="#">介紹</a>
+                                    <a class="dropdown-item" href="#">怎麼喝</a>
+                                </div>
+                                </li>
+                            </ul>
+
+                    </div>
+                    <!-- <form class="form-inline my-2 ">
+                        <div style="width:150px">
+                            <a href="#" class="btn btn-outline-primary mr-1" data-toggle="modal" data-target="#loginModal">登入</a>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#registerModal">註冊</a>
+                        </div>
+                    </form> -->
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-5 text-secondary"><strong>結帳</strong></h1>
+        <div class="row text-center">
+            <div class="col-12 col-sm-4">
+                <div class="alert alert-success alert-rounded " role="alert">
+                    1.輸入訂單資料
+                </div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <div class="alert alert-light alert-rounded " style="background-color: #f0f0f0;" role="alert">
+                    2.金流付款
+                </div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <div class="alert alert-light alert-rounded " style="background-color: #f0f0f0;" role="alert">
+                    3.完成
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card card-header">
+                    <a class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        顯示購物車細節
+                    </a>
+            
+            
+                </div>
+                <div class="collapse" id="collapseExample">
+                    <table class="table table-sm text-center">
+                        <thead>
+                            <tr>
+                                <th width="30"></th>
+                                <th width="100"></th>
+                                <th>商品名稱</th>
+                                <th width="100">數量</th>
+                                <th width="80">小計</th>        
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="align-middle text-center">
+                                    <a href="">
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                    </a>
+                                </td>
+                                <td class="align-middle">
+                                    <img src="https://shoplineimg.com/5cee0a99c4efc60001a5fe6b/64d5e78ea165f20013bf4449/800x.webp?source_format=jpg" alt="" style="width: 100px;" >
+                                </td>
+                                <td>
+                                    日月潭紅茶
+                                </td>
+                                <td>
+                                    2
+                                </td>
+                                <td>
+                                    $ 880
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="text-right">運費</td>
+                                <td class="text-right">
+                                    <strong>$ 60</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="text-right">合計</td>
+                                <td class="text-right">
+                                    <strong>$ 940</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- <div class="card card-body">
+                                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="h5 text-center mt-5 mb-3">訂購人資訊</div>
+    <div class="container mt-">
+        <div class="row justify-content-center">
+            <div class="col-10 ">
+                <form action="">
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">姓名</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" >
+                        </div>
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">電話</label>
+                            <input type="tel" class="form-control" id="exampleFormControlInput1" >
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                            </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">備註</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </div>
+                </form>
+
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="container">
+                    <div class="row text-align">
+                        <div class="col-6">
+                            <div class="h5 mt-1 text-center" >總計: $ 940元</div>
+                        </div>
+                        <div class="col-6 text-center">
+                            <!-- <div class="alert alert-success alert-rounded " role="alert">
+                                <a href="" style="text-decoration: none; color: black;">下一步</a>
+                            </div> -->
+                            <a href="credit_card.html" class="btn btn-lg btn-secondary alert-rounded px-5" style="font-size: 15px; opacity: 0.5">下一步</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <footer class="bg-light text-muted py-3 text-center" >
+        <!-- style="  position: absolute;bottom: 0;width: 100%;" -->
+        <div class="container-fuild" >
+            <ul claa="list-inline text-center">
+                <li class="list-inline-item">Copyright 2024 PJ</li>
+                <li class="list-inline-item">
+                    <a href="#" class="text-dark" style="text-decoration: none;">
+                        <i class="fa-brands fa-square-instagram"></i> Instagrame
+                        <i class="fa-brands fa-line" ></i> Line
+                    </a>
+                </li>
+            </ul>
+            <ul claa="list-inline text-center">
+                Made with Bootstrap
+            </ul>
+        </div>
+    </footer>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">登入</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="account">帳號</label>
+                            <input type="text" class="form-control" id="account" placeholder="請輸入帳號" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">密碼</label>
+                            <input type="password" class="form-control" id="password" placeholder="請輸入密碼" required>
+                        </div>
+
+                        <div class="pt-3 modal-footer">
+                            <button type="submit" class="btn btn-primary ">送出</button>
+                            <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">取消</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-warning text-white">
+                <h5 class="modal-title" id="exampleModalLabel">註冊</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="account">帳號</label>
+                            <input type="text" class="form-control" id="account" placeholder="請輸入帳號" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">密碼</label>
+                            <input type="password" class="form-control" id="password" placeholder="請輸入密碼" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password2">再次輸入密碼</label>
+                            <input type="password" class="form-control" id="password2" placeholder="請再次輸入密碼" required>
+                        </div>
+
+                        <div class="pt-3 modal-footer">
+                            <button type="submit" class="btn btn-primary ">送出</button>
+                            <button type="button" class="btn btn-secondary " data-dismiss="modal">取消</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+<script src="https://kit.fontawesome.com/089bb792a3.js" crossorigin="anonymous"></script>

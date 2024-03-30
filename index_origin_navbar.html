@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pj茶園</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>
+        .btn {
+            border-width: 2px;
+        }
+        .header-carousel-item {
+            height: 450px;
+        }
+        .bg-cover {
+            background-size: cover;
+            background-position: center center;
+
+        }
+        .carousel-caption { 
+            /* 修改輪播文字背景 */
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        .form-control {
+            border-width: 2px; 
+            /* 加深表單框線 */
+        }
+
+        /* 修正驗證文字提示未消失  */
+        .invalid-feedback{
+            display: none !important;
+        }
+
+        .custom-select.is-invalid~.invalid-feedback, .custom-select.is-invalid~.invalid-tooltip, .form-control.is-invalid~.invalid-feedback, .form-control.is-invalid~.invalid-tooltip, .was-validated .custom-select:invalid~.invalid-feedback, .was-validated .custom-select:invalid~.invalid-tooltip, .was-validated .form-control:invalid~.invalid-feedback, .was-validated .form-control:invalid~.invalid-tooltip {
+            display: block !important;
+        }
+
+        /* 修正驗證選項文字變綠色 */
+        .form-check-input.is-valid+.form-check-label, .was-validated .form-check-input:valid+.form-check-label {
+            color: black;
+        }
+
+        /* .margin-top {
+            margin-top: 32px;
+        } */
+        /* .col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9{padding:0;} */
+
+        /* bootstrap官網layout下的overview */
+        @media (min-width: 768px) { 
+            .text-md-dark {
+            color: #333;
+            } 
+        }
+    </style>
+</head>
+<body>    
+    <div class="bg-secondary py-1">
+        <div class="container text-right">
+            <a href="#" class="text-white">
+                <i class="fa-brands fa-square-facebook"></i>
+            </a>
+            <a href="#" class="text-white">
+                <i class="fa-brands fa-square-twitter"></i>
+             </a>
+        </div>
+    </div>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <!-- fixed-top 固定於上方 -->
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/images/logo_w.svg" width="120" height="24" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto"> 
+                    <!-- mr-auto將表單推到最右方 -->
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">首頁<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        有機茶
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">有機茶專賣</a>
+                        <a class="dropdown-item" href="#">介紹</a>
+                        <a class="dropdown-item" href="#">怎麼喝</a>
+                    </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a href="#" class="btn btn-outline-primary mr-1" data-toggle="modal" data-target="#loginModal">登入</a>
+                    <!-- 文件搜尋modal -->
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#registerModal">註冊</a>
+                </form>
+            </div>
+        </div>
+      </nav>
+      <!-- Carousel輪播 -->
+      <header>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item header-carousel-item active bg-cover"  style="background-image: url('https://picsum.photos/id/237/1500/800');">
+                    <!-- header-carousel-item 自定義class -->
+                    <!-- 改為background-image 限制高度 -->
+
+                    <!-- 說明文字 -->
+                    <div class="carousel-caption d-none d-md-block px-2">
+                          <h3>一隻狗</h3>
+                          <p>dogdogdog</p>
+                    </div>
+              </div>
+              <div class="carousel-item header-carousel-item bg-cover"  style="background-image: url('https://picsum.photos/id/100/1500/800');">
+              </div>
+              <div class="carousel-item header-carousel-item bg-cover" style="background-image: url('https://picsum.photos/id/137/1500/800');">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+      </header>
+      <section class="bg-info py-5 text-white"> 
+        <!-- 可填滿色彩，把margin放這邊 不用m 用p 即可填滿-->
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-4">
+                    <!-- md以下滿版寬 -->
+                      <div class="mb-2"><i class="fa-solid fa-lemon fa-5x"></i></div>
+                      <!-- mb往下與文字推出間距 -->
+                      <!-- fa-5x 放大 -->
+                      <h3>檸檬</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim illum corporis fuga. Quaerat quod itaque, adipisci harum repellendus perspiciatis voluptatum commodi alias illum dignissimos beatae. Placeat totam harum quisquam amet!</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-2"><i class="fa-solid fa-burger fa-5x"></i></div>
+                        <h3>漢堡</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim illum corporis fuga. Quaerat quod itaque, adipisci harum repellendus perspiciatis voluptatum commodi alias illum dignissimos beatae. Placeat totam harum quisquam amet!</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-2"><i class="fa-solid fa-cow fa-5x"></i>
+                            <h3>牛肉</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim illum corporis fuga. Quaerat quod itaque, adipisci harum repellendus perspiciatis voluptatum commodi alias illum dignissimos beatae. Placeat totam harum quisquam amet!</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section>
+            <div class="container-fluid py-5 bg-light text-white" style="position: relative">
+                <!-- relative 包 absolute 讓圖片絕對定位 ，不占空間-->
+                <!-- 因為row裡面的圖片不占空間，下方的container不會影響 -->
+                <div class="row">
+                    <div class="col-md-5 bg-cover" style="
+                        position:absolute; top:0;bottom:0;
+                        background-image: url('https://picsum.photos/id/90/1500/800');" >
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-end text-md-dark">
+                        <!-- text-md-dark 預設沒有，要自定義 -->
+                        <div class="col-md-7">
+                            <!-- 若沒有推移到右方，即在左方佔7 -->
+                            <h3>歡迎來到餐廳</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ut nemo totam vitae consectetur autem excepturi explicabo qui animi eaque?
+                            </p>
+                            <a href="#" class="btn btn-outline-info">查看更多</a>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <h4>分店A</h4>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, eos.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>分店b</h4>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, neque.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center my-3">如何這麼美味</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <!-- d-flex讓裡面內容彈性排版 -->
+                            <div class="mr-3">
+                                <i class="fa-solid fa-bowl-food fa-4x"></i>
+                            </div>
+                            <div>
+                                <h3>食材</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat assumenda ratione sit debitis officiis est, non minima quis et nulla!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                                <i class="fa-solid fa-mug-hot fa-4x"></i>
+                            </div>
+                            <h3>飲品</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat assumenda ratione sit debitis officiis est, non minima quis et nulla!</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <!-- d-flex讓裡面內容彈性排版 -->
+                            <div class="mr-3">
+                                <i class="fa-solid fa-bowl-food fa-4x"></i>
+                            </div>
+                            <div>
+                                <h3>食材</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat assumenda ratione sit debitis officiis est, non minima quis et nulla!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <div>
+                                <i class="fa-solid fa-mug-hot fa-4x"></i>
+                            </div>
+                            <div>
+                                <h3>其他飲品</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat assumenda ratione sit debitis officiis est, non minima quis et nulla!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section>
+            <div class="container-fuild bg-light">
+                <div class="row">
+                        <div class="col-md-6 order-2">
+                            <div class="container">
+                                <dl class="row p-5">
+                                    <dt class="col-sm-3">Description lists</dt>
+                                    <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+                                
+                                    <dt class="col-sm-3">Euismod</dt>
+                                    <dd class="col-sm-9">
+                                    <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
+                                    <p>Donec id elit non mi porta gravida at eget metus.</p>
+                                    </dd>
+                                
+                                    <dt class="col-sm-3">Malesuada porta</dt>
+                                    <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+                                
+                                    <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+                                    <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+                                
+                                    <dt class="col-sm-3">Nesting</dt>
+                                    <dd class="col-sm-9">
+                                    <dl class="row">
+                                        <dt class="col-sm-4">Nested definition list</dt>
+                                        <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+                                    </dl>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="col-md-6 order-1">
+                            <img src='https://picsum.photos/id/85/1200/900' width="100%" alt="">
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center my-3">如何這麼美味</h2>
+                <div class="row pt-3">
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <!-- d-flex讓裡面內容彈性排版 -->
+                            <div class="mr-3">
+                                <i class="fa-solid fa-bowl-food fa-4x"></i>
+                            </div>
+                            <div>
+                                <h3>食材</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat assumenda ratione sit debitis officiis est, non minima quis et nulla!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <!-- d-flex讓裡面內容彈性排版 -->
+                            <div class="mr-3">
+                                <i class="fa-solid fa-bowl-food fa-4x"></i>
+                            </div>
+                            <div>
+                                <h3>米其林工法</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat assumenda ratione sit debitis officiis est, non minima quis et nulla!</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light">
+            <div class="container-fulid">
+                <div class="row">
+                    <div class="col-md-6 px-5">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7035.4102322249455!2d121.51259568964971!3d25.056078932518435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a969e2b79ca5%3A0xa7975fe4f6194426!2z6ZuZ6YCj!5e0!3m2!1szh-TW!2stw!4v1705716811530!5m2!1szh-TW!2stw" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- 寬度改100% -->
+                    </div>
+                    <div class="col-md-6 px-5 bg-light">
+                        <form action="" class="needs-validation" novalidate>
+                            <!-- bs官網 form > Custom styles 更改提示樣式-->
+
+                            <div class="form-group">
+                                <label for="username">姓名*</label>
+                                <input type="text" class="form-control" id="username" placeholder="請輸入姓名" required>
+                                <!-- required代表必填，也會依input類型有基本驗證 -->
+
+                                <!-- bs官網 form > Custom styles 更改提示樣式-->
+                                <div class="invalid-feedback">
+                                    請輸入姓名
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tel">電話*</label>
+                                <input type="tel" class="form-control" id="tel" placeholder="請輸入電話" required>
+                                <div class="invalid-feedback">
+                                    請輸入電話
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email*</label>
+                                <input type="email" class="form-control" id="email" placeholder="請輸入email" required>
+                                <div class="invalid-feedback">
+                                    請輸入有效email
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="number">輸入人數*</label>
+                                <input type="number" class="form-control" id="number" placeholder="請輸入用餐人數" required>
+                                <div class="invalid-feedback">
+                                    請輸入用餐人數
+                                </div>
+                            </div>
+
+                            <div class="form-check pl-4 pt-2">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                  葷食
+                                </label>
+                              </div>
+                              <div class="form-check pl-4">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                  素食
+                                </label>
+                              </div>
+                              <div class="form-check pl-4 disabled">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                                <label class="form-check-label" for="exampleRadios3">
+                                  聖誕餐
+                                </label>
+                              </div>
+                            <div class="pt-3 text-center">
+                                <button type="submit" class="btn btn-primary">送出</button>
+                                <button type="button" class="btn btn-secondary">取消</button>
+                            </div>
+                        </form>
+
+
+                    </div>
+
+                    <!-- bs官網 form > Custom styles 更改提示樣式-->
+                    <script>
+                        // Example starter JavaScript for disabling form submissions if there are invalid fields
+                        (function() {
+                            'use strict';
+                            window.addEventListener('load', function() {
+                            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                            var forms = document.getElementsByClassName('needs-validation');
+                            // Loop over them and prevent submission
+                            var validation = Array.prototype.filter.call(forms, function(form) {
+                                form.addEventListener('submit', function(event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                                }, false);
+                            });
+                            }, false);
+                        })();
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-fuild">
+            <div class="row">
+                <div class="col-md-6 bg-cover p-5 text-white" style="background-image: url(https://picsum.photos/id/23/400/500);">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <small>即日起至12.31</small>
+                            <h3>堅持品質最高風味立即加入夥伴</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid pariatur facilis eum quas enim blanditiis suscipit provident rerum porro quis.</p>
+                            <a href="#" class="btn btn-outline-warning">加入我們</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 bg-cover p-5 text-white" style="background-image: url(https://picsum.photos/id/43/400/500);">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <small>台北心中山</small>
+                            <h3>近捷運雙連站步行五分鐘</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid pariatur facilis eum quas enim blanditiis suscipit provident rerum porro quis.</p>
+                            <a href="#" class="btn btn-outline-warning">加入我們</a>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container py-2">
+                <div class="row bg-white align-items-center justify-content-center" >
+                    <p style="padding-top: 5px;">© 2024 pj huang  
+                        <a href="#">facebook </a> 
+                        <a href="#">twitter</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="exampleModalLabel">登入</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="account">帳號</label>
+                            <input type="text" class="form-control" id="account" placeholder="請輸入帳號" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">密碼</label>
+                            <input type="password" class="form-control" id="password" placeholder="請輸入密碼" required>
+                        </div>
+
+                        <div class="pt-3 modal-footer">
+                            <button type="submit" class="btn btn-primary ">送出</button>
+                            <button type="button" class="btn btn-secondary " data-dismiss="modal">取消</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-warning text-white">
+                <h5 class="modal-title" id="exampleModalLabel">註冊</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="account">帳號</label>
+                            <input type="text" class="form-control" id="account" placeholder="請輸入帳號" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">密碼</label>
+                            <input type="password" class="form-control" id="password" placeholder="請輸入密碼" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password2">再次輸入密碼</label>
+                            <input type="password" class="form-control" id="password2" placeholder="請再次輸入密碼" required>
+                        </div>
+
+                        <div class="pt-3 modal-footer">
+                            <button type="submit" class="btn btn-primary ">送出</button>
+                            <button type="button" class="btn btn-secondary " data-dismiss="modal">取消</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/089bb792a3.js" crossorigin="anonymous"></script>
+</body>
+</html>
