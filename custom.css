@@ -39,7 +39,7 @@ line-height: 1.15;
 }
 
 .btn-thin {
-    border-width: 0.5px;
+    border-width: 1.2px;
 }
 
 .header-carousel-item {
@@ -172,4 +172,16 @@ left: 80px;
 
 .alert-rounded {
     border-radius: 50px;
+}
+
+.opacity05 {
+    opacity: 0.5;
+}
+
+.checkbtn {
+    opacity: 0.5;
+    font-size: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 160px;
 }

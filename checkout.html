@@ -226,37 +226,43 @@
     <div class="container mt-">
         <div class="row justify-content-center">
             <div class="col-10 ">
-                <form action="">
+                <form action="" class="form-check">
                     <div class="row">
                         <div class="col mb-3">
                             <label for="exampleFormControlInput1" class="form-label">姓名</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" >
+                            <input type="text" class="form-control form-required" id="exampleFormControlInput1" required>
                         </div>
                         <div class="col mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">電話</label>
-                            <input type="tel" class="form-control" id="exampleFormControlInput1" >
+                            <label for="exampleFormControlInput2" class="form-label">電話</label>
+                            <input type="tel" class="form-control form-required" id="exampleFormControlInput2" required >
                         </div>
                     </div>
 
                     <div class="row">
-                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <label for="exampleFormControlInput3" class="form-label">Email</label>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                                <input type="text" class="form-control form-required" placeholder="Username" aria-label="Username" required>
                                 <span class="input-group-text">@</span>
-                                <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                                <input type="text" class="form-control form-required" placeholder="Server" aria-label="Server" required>
                             </div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">備註</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                </div>
+                    <div class="row text-align">
+                        <div class="col-6">
+                            <div class="h5 mt-1 text-center" >總計: $ 940元</div>
+                        </div>
+                        <div class="col-6 text-center">
+                            <button type="submit" class="btn btn-secondary alert-rounded checkbtn" >下一步</button>
+                        </div>
+                    </div>
                 </form>
-
         </div>
     </div>
 
-    <div class="container my-5">
+    <!-- <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="container">
@@ -265,9 +271,6 @@
                             <div class="h5 mt-1 text-center" >總計: $ 940元</div>
                         </div>
                         <div class="col-6 text-center">
-                            <!-- <div class="alert alert-success alert-rounded " role="alert">
-                                <a href="" style="text-decoration: none; color: black;">下一步</a>
-                            </div> -->
                             <a href="credit_card.html" class="btn btn-lg btn-secondary alert-rounded px-5" style="font-size: 15px; opacity: 0.5">下一步</a>
                         </div>
                     </div>
@@ -275,7 +278,7 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
     <footer class="bg-light text-muted py-3 text-center" >
         <!-- style="  position: absolute;bottom: 0;width: 100%;" -->
         <div class="container-fuild" >
@@ -335,7 +338,7 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
+                    <form action="" >
                         <div class="form-group">
                             <label for="account">帳號</label>
                             <input type="text" class="form-control" id="account" placeholder="請輸入帳號" required>
@@ -359,6 +362,43 @@
         </div>
     </div>
 <!-- Optional JavaScript -->
+
+<script>
+    document.addEventListener('input', function () {
+        var formInputs = document.querySelectorAll('.form-required[required]');
+        var allFieldsFilled = true;
+
+        formInputs.forEach(function(input) {
+            if (input.value.trim() === '') {
+                allFieldsFilled = false;
+            }
+        });
+
+        var submitButton = document.querySelector('button[type="submit"]');
+        if (allFieldsFilled) {
+            submitButton.classList.remove('btn-secondary');
+            submitButton.classList.add('btn-success');
+        } else {
+            submitButton.classList.remove('btn-success');
+            submitButton.classList.add('btn-secondary');
+        }
+    });
+
+    </script>
+
+    <script>
+
+    document.querySelector('form.form-check').addEventListener('submit', function(e) {
+        e.preventDefault(); // 阻止表單默認提交行為
+        
+        // 在這裡可以添加代碼來處理表單提交後的操作
+        // 例如檢查並驗證表單內容
+        
+        // 重定向至credit_card.html頁面
+        window.location.href = 'credit_card.html';
+    });
+    </script>
+
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
